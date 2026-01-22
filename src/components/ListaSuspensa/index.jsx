@@ -1,4 +1,4 @@
-import "./lista-suspensa.style.css";
+import "./lista-suspesa.style.css";
 
 export function ListaSuspensa({ itens, ...rest }) {
   return (

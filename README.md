@@ -1,5 +1,3 @@
-![Capa do projeto](capa.png)
-
 # Tecboard
 
 Seu hub de eventos de tecnologia! Este projeto foi construído com React e tem como objetivo facilitar a criação e visualização de eventos voltados para temas como Front-end, Back-end, Cloud e muito mais.
@@ -18,7 +16,7 @@ Seu hub de eventos de tecnologia! Este projeto foi construído com React e tem c
 - **useState**: Para gerenciamento do estado local dos eventos.
 - **Componentização**: Separação clara de responsabilidades por componente.
 - **Formulários com `FormData`**: Captura de dados estruturada.
-- **CSS Modules**: Estilos organizados por componente com escopo local.
+- **CSS Modules**: style organizados por componente com escopo local.
 - **Google Fonts (Work Sans + Orbitron)**: Tipografia personalizada.
 
 ## 🛠️ Como rodar o projeto

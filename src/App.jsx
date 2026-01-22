@@ -4,7 +4,6 @@ import { Banner } from "./components/Banner";
 import { CardEvento } from "./components/CardEvento";
 import { FormularioDeEvento } from "./components/FormularioDeEvento";
 import { Tema } from "./components/Tema";
-// no react, components são FUNÇÕES
 
 function App() {
   const temas = [
@@ -44,11 +43,8 @@ function App() {
   ]);
 
   function adicionarEvento(evento) {
-    // eventos.push(evento)
-    // console.log('eventos => ', eventos)
     setEventos([...eventos, evento]);
   }
-  // renderização condicional usando &&
   return (
     <main>
       <header>
@@ -82,22 +78,6 @@ function App() {
           );
         })}
       </section>
-
-      {/* <section>
-        <Tema tema={temas[1]} />
-      </section>
-      <section>
-        <Tema tema={temas[2]} />
-      </section>
-      <section>
-        <Tema tema={temas[3]} />
-      </section>
-      <section>
-        <Tema tema={temas[4]} />
-      </section>
-      <section>
-        <Tema tema={temas[5]} />
-      </section> */}
     </main>
   );
 }

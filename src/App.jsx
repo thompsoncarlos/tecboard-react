@@ -4,6 +4,7 @@ import { Banner } from "./components/Banner";
 import { CardEvento } from "./components/CardEvento";
 import { FormularioDeEvento } from "./components/FormularioDeEvento";
 import { Tema } from "./components/Tema";
+// no react, components são FUNÇÕES
 
 function App() {
   const temas = [
@@ -21,7 +22,7 @@ function App() {
     },
     {
       id: 4,
-      nome: "inteligência artificial",
+      nome: "inteligência artificial`",
     },
     {
       id: 5,
@@ -43,9 +44,11 @@ function App() {
   ]);
 
   function adicionarEvento(evento) {
+    // eventos.push(evento)
+    // console.log('eventos => ', eventos)
     setEventos([...eventos, evento]);
   }
-
+  // renderização condicional usando &&
   return (
     <main>
       <header>
@@ -56,12 +59,13 @@ function App() {
       <section className="container">
         {temas.map(function (tema) {
           if (
-            eventos.some(function (evento) {
+            !eventos.some(function (evento) {
               return evento.tema.id == tema.id;
             })
           ) {
             return null;
           }
+
           return (
             <section key={tema.id}>
               <Tema tema={tema} />
@@ -78,6 +82,22 @@ function App() {
           );
         })}
       </section>
+
+      {/* <section>
+        <Tema tema={temas[1]} />
+      </section>
+      <section>
+        <Tema tema={temas[2]} />
+      </section>
+      <section>
+        <Tema tema={temas[3]} />
+      </section>
+      <section>
+        <Tema tema={temas[4]} />
+      </section>
+      <section>
+        <Tema tema={temas[5]} />
+      </section> */}
     </main>
   );
 }

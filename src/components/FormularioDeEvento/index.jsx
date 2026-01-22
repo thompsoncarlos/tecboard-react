@@ -7,18 +7,34 @@ import "./formulario-de-evento.style.css";
 import { Botao } from "../Botao";
 import { ListaSuspensa } from "../ListaSuspensa";
 
-export function FormularioDeEvento({ temas }) {
+export function FormularioDeEvento({ temas, aoSubmeter }) {
+
+  function aoFormSubmetido(formData) {
+    console.log('opa, tá na hora de criar um novo evento', formData);
+    const evento = {
+      capa: formData.get('capa'),
+      tema: temas.find(function (item) {
+        return item.id == formData.get('tema')
+      }),
+      data: new Date(formData.get('dataEvento')),
+      titulo: formData.get('nomeEvento'),
+    }
+    aoSubmeter(evento)
+  }
+
+
+
   return (
-    <form className="form-evento" action="">
+    <form className="form-evento" action={aoFormSubmetido}>
       <TituloFormulario>Preencha para criar um evento:</TituloFormulario>
       <div className="campos">
         <CampoDeFormulario>
-          <Label htmlFor="nome">Qual o nome do evento?</Label>
+          <Label htmlFor="nomeEvento">Qual o nome do evento?</Label>
           <CampoDeEntrada
             type="text"
-            id="nome"
+            id="nomeEvento"
             placeholder="Summer dev hits"
-            name="nomeDoEvento"
+            name="nomeEvento"
           />
         </CampoDeFormulario>
         <CampoDeFormulario>
@@ -27,16 +43,15 @@ export function FormularioDeEvento({ temas }) {
             type="text"
             id="capa"
             placeholder="https://exemplo.com/imagem.png"
-            name="capaDaImagem"
+            name="capa"
           />
         </CampoDeFormulario>
         <CampoDeFormulario>
-          <Label htmlFor="data">Data do evento</Label>
+          <Label htmlFor="dataEvento">Data do evento</Label>
           <CampoDeEntrada
             type="date"
-            id="data"
-            placeholder="2024-06-01"
-            name="data"
+            id="dataEvento"
+            name="dataEvento"
           />
         </CampoDeFormulario>
         <CampoDeFormulario>
